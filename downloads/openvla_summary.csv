@@ -1,0 +1,10 @@
+task_suite,prompt_condition,episodes,successes,success_rate,avg_step,avg_queries
+libero_goal,do_nothing,100,10,0.1,277.27,35.16
+libero_goal,empty,100,10,0.1,277.41,35.16
+libero_goal,task,100,97,0.97,113.27,14.75
+libero_object,do_nothing,100,97,0.97,141.76,18.29
+libero_object,empty,100,96,0.96,143.03,18.35
+libero_object,task,100,97,0.97,135.3,17.49
+libero_spatial,do_nothing,100,84,0.84,121.52,15.77
+libero_spatial,empty,100,83,0.83,126.56,16.39
+libero_spatial,task,100,98,0.98,102.59,13.39

@@ -1,0 +1,951 @@
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /home/server1/vla/pi05/examples/libero/.venv/lib/python3.8/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+INFO:root:Task suite: libero_object
+INFO:root:Waiting for server at ws://0.0.0.0:8000...
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  0%|          | 0/10 [00:00<?, ?it/s]/home/server1/vla/pi05/examples/libero/.venv/lib/python3.8/site-packages/numba/np/arraymath.py:3845: DeprecationWarning: `np.MachAr` is deprecated (NumPy 1.22).
+  @overload(np.MachAr)
+
+  0%|          | 0/10 [00:00<?, ?it/s][AINFO:root:
+Task: pick up the alphabet soup and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 1...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task00_episode00_pick_up_the_alphabet_soup_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 1
+INFO:root:# successes: 0 (0.0%)
+
+ 10%|█         | 1/10 [00:08<01:15,  8.39s/it][AINFO:root:
+Task: pick up the alphabet soup and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 2...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task00_episode01_pick_up_the_alphabet_soup_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 2
+INFO:root:# successes: 1 (50.0%)
+
+ 20%|██        | 2/10 [00:12<00:46,  5.84s/it][AINFO:root:
+Task: pick up the alphabet soup and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 3...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task00_episode02_pick_up_the_alphabet_soup_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 3
+INFO:root:# successes: 2 (66.7%)
+
+ 30%|███       | 3/10 [00:16<00:35,  5.07s/it][AINFO:root:
+Task: pick up the alphabet soup and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 4...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task00_episode03_pick_up_the_alphabet_soup_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 4
+INFO:root:# successes: 3 (75.0%)
+
+ 40%|████      | 4/10 [00:20<00:28,  4.80s/it][AINFO:root:
+Task: pick up the alphabet soup and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 5...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task00_episode04_pick_up_the_alphabet_soup_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 5
+INFO:root:# successes: 3 (60.0%)
+
+ 50%|█████     | 5/10 [00:28<00:28,  5.71s/it][AINFO:root:
+Task: pick up the alphabet soup and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 6...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task00_episode05_pick_up_the_alphabet_soup_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 6
+INFO:root:# successes: 4 (66.7%)
+
+ 60%|██████    | 6/10 [00:32<00:20,  5.21s/it][AINFO:root:
+Task: pick up the alphabet soup and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 7...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task00_episode06_pick_up_the_alphabet_soup_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 7
+INFO:root:# successes: 4 (57.1%)
+
+ 70%|███████   | 7/10 [00:40<00:17,  5.94s/it][AINFO:root:
+Task: pick up the alphabet soup and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 8...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task00_episode07_pick_up_the_alphabet_soup_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 8
+INFO:root:# successes: 5 (62.5%)
+
+ 80%|████████  | 8/10 [00:45<00:11,  5.66s/it][AINFO:root:
+Task: pick up the alphabet soup and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 9...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task00_episode08_pick_up_the_alphabet_soup_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 9
+INFO:root:# successes: 6 (66.7%)
+
+ 90%|█████████ | 9/10 [00:49<00:05,  5.12s/it][AINFO:root:
+Task: pick up the alphabet soup and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 10...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task00_episode09_pick_up_the_alphabet_soup_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 10
+INFO:root:# successes: 6 (60.0%)
+
+100%|██████████| 10/10 [00:56<00:00,  5.83s/it][A100%|██████████| 10/10 [00:56<00:00,  5.64s/it]
+INFO:root:Current task success rate: 0.6
+INFO:root:Current total success rate: 0.6
+ 10%|█         | 1/10 [00:57<08:37, 57.49s/it]
+  0%|          | 0/10 [00:00<?, ?it/s][AINFO:root:
+Task: pick up the cream cheese and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 1...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task01_episode00_pick_up_the_cream_cheese_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 11
+INFO:root:# successes: 6 (54.5%)
+
+ 10%|█         | 1/10 [00:07<01:08,  7.57s/it][AINFO:root:
+Task: pick up the cream cheese and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 2...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task01_episode01_pick_up_the_cream_cheese_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 12
+INFO:root:# successes: 7 (58.3%)
+
+ 20%|██        | 2/10 [00:11<00:41,  5.21s/it][AINFO:root:
+Task: pick up the cream cheese and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 3...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task01_episode02_pick_up_the_cream_cheese_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 13
+INFO:root:# successes: 7 (53.8%)
+
+ 30%|███       | 3/10 [00:18<00:43,  6.26s/it][AINFO:root:
+Task: pick up the cream cheese and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 4...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task01_episode03_pick_up_the_cream_cheese_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 14
+INFO:root:# successes: 7 (50.0%)
+
+ 40%|████      | 4/10 [00:26<00:40,  6.70s/it][AINFO:root:
+Task: pick up the cream cheese and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 5...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task01_episode04_pick_up_the_cream_cheese_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 15
+INFO:root:# successes: 8 (53.3%)
+
+ 50%|█████     | 5/10 [00:29<00:28,  5.67s/it][AINFO:root:
+Task: pick up the cream cheese and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 6...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task01_episode05_pick_up_the_cream_cheese_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 16
+INFO:root:# successes: 8 (50.0%)
+
+ 60%|██████    | 6/10 [00:37<00:25,  6.30s/it][AINFO:root:
+Task: pick up the cream cheese and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 7...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task01_episode06_pick_up_the_cream_cheese_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 17
+INFO:root:# successes: 8 (47.1%)
+
+ 70%|███████   | 7/10 [00:45<00:20,  6.73s/it][AINFO:root:
+Task: pick up the cream cheese and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 8...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task01_episode07_pick_up_the_cream_cheese_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 18
+INFO:root:# successes: 9 (50.0%)
+
+ 80%|████████  | 8/10 [00:48<00:11,  5.80s/it][AINFO:root:
+Task: pick up the cream cheese and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 9...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task01_episode08_pick_up_the_cream_cheese_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 19
+INFO:root:# successes: 9 (47.4%)
+
+ 90%|█████████ | 9/10 [00:56<00:06,  6.32s/it][AINFO:root:
+Task: pick up the cream cheese and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 10...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task01_episode09_pick_up_the_cream_cheese_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 20
+INFO:root:# successes: 9 (45.0%)
+
+100%|██████████| 10/10 [01:03<00:00,  6.68s/it][A100%|██████████| 10/10 [01:03<00:00,  6.38s/it]
+INFO:root:Current task success rate: 0.3
+INFO:root:Current total success rate: 0.45
+ 20%|██        | 2/10 [02:01<08:11, 61.45s/it]
+  0%|          | 0/10 [00:00<?, ?it/s][AINFO:root:
+Task: pick up the salad dressing and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 1...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task02_episode00_pick_up_the_salad_dressing_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 21
+INFO:root:# successes: 10 (47.6%)
+
+ 10%|█         | 1/10 [00:03<00:30,  3.39s/it][AINFO:root:
+Task: pick up the salad dressing and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 2...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task02_episode01_pick_up_the_salad_dressing_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 22
+INFO:root:# successes: 11 (50.0%)
+
+ 20%|██        | 2/10 [00:06<00:27,  3.47s/it][AINFO:root:
+Task: pick up the salad dressing and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 3...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task02_episode02_pick_up_the_salad_dressing_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 23
+INFO:root:# successes: 12 (52.2%)
+
+ 30%|███       | 3/10 [00:10<00:23,  3.42s/it][AINFO:root:
+Task: pick up the salad dressing and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 4...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task02_episode03_pick_up_the_salad_dressing_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 24
+INFO:root:# successes: 12 (50.0%)
+
+ 40%|████      | 4/10 [00:17<00:29,  4.97s/it][AINFO:root:
+Task: pick up the salad dressing and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 5...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task02_episode04_pick_up_the_salad_dressing_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 25
+INFO:root:# successes: 13 (52.0%)
+
+ 50%|█████     | 5/10 [00:21<00:22,  4.43s/it][AINFO:root:
+Task: pick up the salad dressing and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 6...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task02_episode05_pick_up_the_salad_dressing_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 26
+INFO:root:# successes: 14 (53.8%)
+
+ 60%|██████    | 6/10 [00:24<00:16,  4.19s/it][AINFO:root:
+Task: pick up the salad dressing and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 7...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task02_episode06_pick_up_the_salad_dressing_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 27
+INFO:root:# successes: 15 (55.6%)
+
+ 70%|███████   | 7/10 [00:28<00:11,  3.93s/it][AINFO:root:
+Task: pick up the salad dressing and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 8...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task02_episode07_pick_up_the_salad_dressing_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 28
+INFO:root:# successes: 15 (53.6%)
+
+ 80%|████████  | 8/10 [00:35<00:10,  5.02s/it][AINFO:root:
+Task: pick up the salad dressing and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 9...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task02_episode08_pick_up_the_salad_dressing_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 29
+INFO:root:# successes: 16 (55.2%)
+
+ 90%|█████████ | 9/10 [00:39<00:04,  4.53s/it][AINFO:root:
+Task: pick up the salad dressing and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 10...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task02_episode09_pick_up_the_salad_dressing_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 30
+INFO:root:# successes: 16 (53.3%)
+
+100%|██████████| 10/10 [00:46<00:00,  5.40s/it][A100%|██████████| 10/10 [00:46<00:00,  4.64s/it]
+INFO:root:Current task success rate: 0.7
+INFO:root:Current total success rate: 0.5333333333333333
+ 30%|███       | 3/10 [02:48<06:23, 54.78s/it]
+  0%|          | 0/10 [00:00<?, ?it/s][AINFO:root:
+Task: pick up the bbq sauce and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 1...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task03_episode00_pick_up_the_bbq_sauce_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 31
+INFO:root:# successes: 17 (54.8%)
+
+ 10%|█         | 1/10 [00:03<00:32,  3.63s/it][AINFO:root:
+Task: pick up the bbq sauce and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 2...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task03_episode01_pick_up_the_bbq_sauce_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 32
+INFO:root:# successes: 17 (53.1%)
+
+ 20%|██        | 2/10 [00:10<00:46,  5.75s/it][AINFO:root:
+Task: pick up the bbq sauce and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 3...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task03_episode02_pick_up_the_bbq_sauce_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 33
+INFO:root:# successes: 18 (54.5%)
+
+ 30%|███       | 3/10 [00:14<00:34,  4.90s/it][AINFO:root:
+Task: pick up the bbq sauce and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 4...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task03_episode03_pick_up_the_bbq_sauce_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 34
+INFO:root:# successes: 18 (52.9%)
+
+ 40%|████      | 4/10 [00:22<00:35,  5.87s/it][AINFO:root:
+Task: pick up the bbq sauce and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 5...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task03_episode04_pick_up_the_bbq_sauce_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 35
+INFO:root:# successes: 19 (54.3%)
+
+ 50%|█████     | 5/10 [00:25<00:25,  5.15s/it][AINFO:root:
+Task: pick up the bbq sauce and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 6...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task03_episode05_pick_up_the_bbq_sauce_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 36
+INFO:root:# successes: 20 (55.6%)
+
+ 60%|██████    | 6/10 [00:29<00:18,  4.66s/it][AINFO:root:
+Task: pick up the bbq sauce and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 7...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task03_episode06_pick_up_the_bbq_sauce_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 37
+INFO:root:# successes: 21 (56.8%)
+
+ 70%|███████   | 7/10 [00:33<00:13,  4.34s/it][AINFO:root:
+Task: pick up the bbq sauce and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 8...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task03_episode07_pick_up_the_bbq_sauce_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 38
+INFO:root:# successes: 22 (57.9%)
+
+ 80%|████████  | 8/10 [00:37<00:08,  4.42s/it][AINFO:root:
+Task: pick up the bbq sauce and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 9...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task03_episode08_pick_up_the_bbq_sauce_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 39
+INFO:root:# successes: 23 (59.0%)
+
+ 90%|█████████ | 9/10 [00:44<00:04,  4.96s/it][AINFO:root:
+Task: pick up the bbq sauce and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 10...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task03_episode09_pick_up_the_bbq_sauce_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 40
+INFO:root:# successes: 24 (60.0%)
+
+100%|██████████| 10/10 [00:47<00:00,  4.62s/it][A100%|██████████| 10/10 [00:47<00:00,  4.80s/it]
+INFO:root:Current task success rate: 0.8
+INFO:root:Current total success rate: 0.6
+ 40%|████      | 4/10 [03:37<05:13, 52.29s/it]
+  0%|          | 0/10 [00:00<?, ?it/s][AINFO:root:
+Task: pick up the ketchup and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 1...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task04_episode00_pick_up_the_ketchup_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 41
+INFO:root:# successes: 24 (58.5%)
+
+ 10%|█         | 1/10 [00:07<01:05,  7.31s/it][AINFO:root:
+Task: pick up the ketchup and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 2...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task04_episode01_pick_up_the_ketchup_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 42
+INFO:root:# successes: 24 (57.1%)
+
+ 20%|██        | 2/10 [00:14<00:58,  7.35s/it][AINFO:root:
+Task: pick up the ketchup and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 3...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task04_episode02_pick_up_the_ketchup_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 43
+INFO:root:# successes: 24 (55.8%)
+
+ 30%|███       | 3/10 [00:22<00:51,  7.40s/it][AINFO:root:
+Task: pick up the ketchup and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 4...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task04_episode03_pick_up_the_ketchup_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 44
+INFO:root:# successes: 24 (54.5%)
+
+ 40%|████      | 4/10 [00:29<00:44,  7.37s/it][AINFO:root:
+Task: pick up the ketchup and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 5...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task04_episode04_pick_up_the_ketchup_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 45
+INFO:root:# successes: 25 (55.6%)
+
+ 50%|█████     | 5/10 [00:34<00:32,  6.53s/it][AINFO:root:
+Task: pick up the ketchup and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 6...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task04_episode05_pick_up_the_ketchup_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 46
+INFO:root:# successes: 25 (54.3%)
+
+ 60%|██████    | 6/10 [00:41<00:27,  6.80s/it][AINFO:root:
+Task: pick up the ketchup and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 7...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task04_episode06_pick_up_the_ketchup_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 47
+INFO:root:# successes: 25 (53.2%)
+
+ 70%|███████   | 7/10 [00:49<00:21,  7.12s/it][AINFO:root:
+Task: pick up the ketchup and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 8...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task04_episode07_pick_up_the_ketchup_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 48
+INFO:root:# successes: 26 (54.2%)
+
+ 80%|████████  | 8/10 [00:54<00:13,  6.55s/it][AINFO:root:
+Task: pick up the ketchup and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 9...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task04_episode08_pick_up_the_ketchup_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 49
+INFO:root:# successes: 26 (53.1%)
+
+ 90%|█████████ | 9/10 [01:02<00:06,  6.80s/it][AINFO:root:
+Task: pick up the ketchup and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 10...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task04_episode09_pick_up_the_ketchup_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 50
+INFO:root:# successes: 27 (54.0%)
+
+100%|██████████| 10/10 [01:06<00:00,  5.92s/it][A100%|██████████| 10/10 [01:06<00:00,  6.62s/it]
+INFO:root:Current task success rate: 0.3
+INFO:root:Current total success rate: 0.54
+ 50%|█████     | 5/10 [04:43<04:47, 57.48s/it]
+  0%|          | 0/10 [00:00<?, ?it/s][AINFO:root:
+Task: pick up the tomato sauce and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 1...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task05_episode00_pick_up_the_tomato_sauce_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 51
+INFO:root:# successes: 28 (54.9%)
+
+ 10%|█         | 1/10 [00:04<00:39,  4.39s/it][AINFO:root:
+Task: pick up the tomato sauce and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 2...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task05_episode01_pick_up_the_tomato_sauce_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 52
+INFO:root:# successes: 29 (55.8%)
+
+ 20%|██        | 2/10 [00:08<00:31,  3.94s/it][AINFO:root:
+Task: pick up the tomato sauce and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 3...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task05_episode02_pick_up_the_tomato_sauce_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 53
+INFO:root:# successes: 30 (56.6%)
+
+ 30%|███       | 3/10 [00:11<00:26,  3.83s/it][AINFO:root:
+Task: pick up the tomato sauce and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 4...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task05_episode03_pick_up_the_tomato_sauce_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 54
+INFO:root:# successes: 30 (55.6%)
+
+ 40%|████      | 4/10 [00:19<00:32,  5.38s/it][AINFO:root:
+Task: pick up the tomato sauce and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 5...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task05_episode04_pick_up_the_tomato_sauce_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 55
+INFO:root:# successes: 31 (56.4%)
+
+ 50%|█████     | 5/10 [00:23<00:23,  4.77s/it][AINFO:root:
+Task: pick up the tomato sauce and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 6...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task05_episode05_pick_up_the_tomato_sauce_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 56
+INFO:root:# successes: 32 (57.1%)
+
+ 60%|██████    | 6/10 [00:26<00:17,  4.44s/it][AINFO:root:
+Task: pick up the tomato sauce and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 7...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task05_episode06_pick_up_the_tomato_sauce_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 57
+INFO:root:# successes: 33 (57.9%)
+
+ 70%|███████   | 7/10 [00:30<00:12,  4.17s/it][AINFO:root:
+Task: pick up the tomato sauce and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 8...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task05_episode07_pick_up_the_tomato_sauce_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 58
+INFO:root:# successes: 34 (58.6%)
+
+ 80%|████████  | 8/10 [00:34<00:07,  3.99s/it][AINFO:root:
+Task: pick up the tomato sauce and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 9...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task05_episode08_pick_up_the_tomato_sauce_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 59
+INFO:root:# successes: 35 (59.3%)
+
+ 90%|█████████ | 9/10 [00:39<00:04,  4.25s/it][AINFO:root:
+Task: pick up the tomato sauce and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 10...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task05_episode09_pick_up_the_tomato_sauce_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 60
+INFO:root:# successes: 36 (60.0%)
+
+100%|██████████| 10/10 [00:43<00:00,  4.35s/it][A100%|██████████| 10/10 [00:43<00:00,  4.36s/it]
+INFO:root:Current task success rate: 0.9
+INFO:root:Current total success rate: 0.6
+ 60%|██████    | 6/10 [05:27<03:31, 52.89s/it]
+  0%|          | 0/10 [00:00<?, ?it/s][AINFO:root:
+Task: pick up the butter and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 1...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task06_episode00_pick_up_the_butter_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 61
+INFO:root:# successes: 37 (60.7%)
+
+ 10%|█         | 1/10 [00:04<00:38,  4.33s/it][AINFO:root:
+Task: pick up the butter and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 2...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task06_episode01_pick_up_the_butter_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 62
+INFO:root:# successes: 37 (59.7%)
+
+ 20%|██        | 2/10 [00:11<00:49,  6.13s/it][AINFO:root:
+Task: pick up the butter and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 3...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task06_episode02_pick_up_the_butter_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 63
+INFO:root:# successes: 38 (60.3%)
+
+ 30%|███       | 3/10 [00:15<00:36,  5.27s/it][AINFO:root:
+Task: pick up the butter and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 4...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task06_episode03_pick_up_the_butter_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 64
+INFO:root:# successes: 38 (59.4%)
+
+ 40%|████      | 4/10 [00:23<00:36,  6.13s/it][AINFO:root:
+Task: pick up the butter and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 5...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task06_episode04_pick_up_the_butter_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 65
+INFO:root:# successes: 38 (58.5%)
+
+ 50%|█████     | 5/10 [00:30<00:32,  6.58s/it][AINFO:root:
+Task: pick up the butter and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 6...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task06_episode05_pick_up_the_butter_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 66
+INFO:root:# successes: 39 (59.1%)
+
+ 60%|██████    | 6/10 [00:35<00:23,  5.79s/it][AINFO:root:
+Task: pick up the butter and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 7...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task06_episode06_pick_up_the_butter_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 67
+INFO:root:# successes: 39 (58.2%)
+
+ 70%|███████   | 7/10 [00:42<00:19,  6.47s/it][AINFO:root:
+Task: pick up the butter and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 8...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task06_episode07_pick_up_the_butter_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 68
+INFO:root:# successes: 40 (58.8%)
+
+ 80%|████████  | 8/10 [00:46<00:11,  5.65s/it][AINFO:root:
+Task: pick up the butter and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 9...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task06_episode08_pick_up_the_butter_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 69
+INFO:root:# successes: 41 (59.4%)
+
+ 90%|█████████ | 9/10 [00:51<00:05,  5.24s/it][AINFO:root:
+Task: pick up the butter and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 10...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task06_episode09_pick_up_the_butter_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 70
+INFO:root:# successes: 41 (58.6%)
+
+100%|██████████| 10/10 [00:58<00:00,  5.88s/it][A100%|██████████| 10/10 [00:58<00:00,  5.85s/it]
+INFO:root:Current task success rate: 0.5
+INFO:root:Current total success rate: 0.5857142857142857
+ 70%|███████   | 7/10 [06:26<02:44, 54.86s/it]
+  0%|          | 0/10 [00:00<?, ?it/s][AINFO:root:
+Task: pick up the milk and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 1...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task07_episode00_pick_up_the_milk_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 71
+INFO:root:# successes: 42 (59.2%)
+
+ 10%|█         | 1/10 [00:05<00:51,  5.69s/it][AINFO:root:
+Task: pick up the milk and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 2...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task07_episode01_pick_up_the_milk_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 72
+INFO:root:# successes: 43 (59.7%)
+
+ 20%|██        | 2/10 [00:09<00:38,  4.79s/it][AINFO:root:
+Task: pick up the milk and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 3...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task07_episode02_pick_up_the_milk_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 73
+INFO:root:# successes: 44 (60.3%)
+
+ 30%|███       | 3/10 [00:14<00:34,  4.86s/it][AINFO:root:
+Task: pick up the milk and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 4...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task07_episode03_pick_up_the_milk_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 74
+INFO:root:# successes: 45 (60.8%)
+
+ 40%|████      | 4/10 [00:19<00:29,  4.91s/it][AINFO:root:
+Task: pick up the milk and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 5...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task07_episode04_pick_up_the_milk_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 75
+INFO:root:# successes: 46 (61.3%)
+
+ 50%|█████     | 5/10 [00:23<00:23,  4.63s/it][AINFO:root:
+Task: pick up the milk and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 6...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task07_episode05_pick_up_the_milk_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 76
+INFO:root:# successes: 46 (60.5%)
+
+ 60%|██████    | 6/10 [00:31<00:22,  5.58s/it][AINFO:root:
+Task: pick up the milk and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 7...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task07_episode06_pick_up_the_milk_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 77
+INFO:root:# successes: 47 (61.0%)
+
+ 70%|███████   | 7/10 [00:35<00:15,  5.08s/it][AINFO:root:
+Task: pick up the milk and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 8...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task07_episode07_pick_up_the_milk_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 78
+INFO:root:# successes: 48 (61.5%)
+
+ 80%|████████  | 8/10 [00:40<00:09,  4.95s/it][AINFO:root:
+Task: pick up the milk and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 9...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task07_episode08_pick_up_the_milk_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 79
+INFO:root:# successes: 49 (62.0%)
+
+ 90%|█████████ | 9/10 [00:44<00:04,  4.66s/it][AINFO:root:
+Task: pick up the milk and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 10...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task07_episode09_pick_up_the_milk_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 80
+INFO:root:# successes: 49 (61.3%)
+
+100%|██████████| 10/10 [00:51<00:00,  5.49s/it][A100%|██████████| 10/10 [00:51<00:00,  5.14s/it]
+INFO:root:Current task success rate: 0.8
+INFO:root:Current total success rate: 0.6125
+ 80%|████████  | 8/10 [07:18<01:47, 53.91s/it]
+  0%|          | 0/10 [00:00<?, ?it/s][AINFO:root:
+Task: pick up the chocolate pudding and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 1...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task08_episode00_pick_up_the_chocolate_pudding_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 81
+INFO:root:# successes: 50 (61.7%)
+
+ 10%|█         | 1/10 [00:04<00:36,  4.11s/it][AINFO:root:
+Task: pick up the chocolate pudding and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 2...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task08_episode01_pick_up_the_chocolate_pudding_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 82
+INFO:root:# successes: 50 (61.0%)
+
+ 20%|██        | 2/10 [00:11<00:48,  6.01s/it][AINFO:root:
+Task: pick up the chocolate pudding and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 3...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task08_episode02_pick_up_the_chocolate_pudding_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 83
+INFO:root:# successes: 51 (61.4%)
+
+ 30%|███       | 3/10 [00:15<00:35,  5.13s/it][AINFO:root:
+Task: pick up the chocolate pudding and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 4...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task08_episode03_pick_up_the_chocolate_pudding_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 84
+INFO:root:# successes: 52 (61.9%)
+
+ 40%|████      | 4/10 [00:19<00:28,  4.77s/it][AINFO:root:
+Task: pick up the chocolate pudding and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 5...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task08_episode04_pick_up_the_chocolate_pudding_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 85
+INFO:root:# successes: 53 (62.4%)
+
+ 50%|█████     | 5/10 [00:23<00:22,  4.56s/it][AINFO:root:
+Task: pick up the chocolate pudding and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 6...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task08_episode05_pick_up_the_chocolate_pudding_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 86
+INFO:root:# successes: 54 (62.8%)
+
+ 60%|██████    | 6/10 [00:28<00:17,  4.40s/it][AINFO:root:
+Task: pick up the chocolate pudding and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 7...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task08_episode06_pick_up_the_chocolate_pudding_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 87
+INFO:root:# successes: 55 (63.2%)
+
+ 70%|███████   | 7/10 [00:32<00:13,  4.46s/it][AINFO:root:
+Task: pick up the chocolate pudding and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 8...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task08_episode07_pick_up_the_chocolate_pudding_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 88
+INFO:root:# successes: 55 (62.5%)
+
+ 80%|████████  | 8/10 [00:40<00:11,  5.57s/it][AINFO:root:
+Task: pick up the chocolate pudding and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 9...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task08_episode08_pick_up_the_chocolate_pudding_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 89
+INFO:root:# successes: 56 (62.9%)
+
+ 90%|█████████ | 9/10 [00:45<00:05,  5.30s/it][AINFO:root:
+Task: pick up the chocolate pudding and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 10...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task08_episode09_pick_up_the_chocolate_pudding_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 90
+INFO:root:# successes: 56 (62.2%)
+
+100%|██████████| 10/10 [00:52<00:00,  5.95s/it][A100%|██████████| 10/10 [00:52<00:00,  5.26s/it]
+INFO:root:Current task success rate: 0.7
+INFO:root:Current total success rate: 0.6222222222222222
+ 90%|█████████ | 9/10 [08:11<00:53, 53.65s/it]
+  0%|          | 0/10 [00:00<?, ?it/s][AINFO:root:
+Task: pick up the orange juice and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 1...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task09_episode00_pick_up_the_orange_juice_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 91
+INFO:root:# successes: 56 (61.5%)
+
+ 10%|█         | 1/10 [00:07<01:05,  7.26s/it][AINFO:root:
+Task: pick up the orange juice and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 2...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task09_episode01_pick_up_the_orange_juice_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 92
+INFO:root:# successes: 56 (60.9%)
+
+ 20%|██        | 2/10 [00:14<00:58,  7.29s/it][AINFO:root:
+Task: pick up the orange juice and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 3...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task09_episode02_pick_up_the_orange_juice_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 93
+INFO:root:# successes: 57 (61.3%)
+
+ 30%|███       | 3/10 [00:19<00:42,  6.07s/it][AINFO:root:
+Task: pick up the orange juice and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 4...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task09_episode03_pick_up_the_orange_juice_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 94
+INFO:root:# successes: 58 (61.7%)
+
+ 40%|████      | 4/10 [00:22<00:30,  5.14s/it][AINFO:root:
+Task: pick up the orange juice and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 5...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task09_episode04_pick_up_the_orange_juice_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 95
+INFO:root:# successes: 59 (62.1%)
+
+ 50%|█████     | 5/10 [00:26<00:23,  4.65s/it][AINFO:root:
+Task: pick up the orange juice and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 6...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task09_episode05_pick_up_the_orange_juice_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 96
+INFO:root:# successes: 59 (61.5%)
+
+ 60%|██████    | 6/10 [00:33<00:22,  5.55s/it][AINFO:root:
+Task: pick up the orange juice and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 7...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task09_episode06_pick_up_the_orange_juice_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 97
+INFO:root:# successes: 59 (60.8%)
+
+ 70%|███████   | 7/10 [00:41<00:18,  6.12s/it][AINFO:root:
+Task: pick up the orange juice and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 8...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task09_episode07_pick_up_the_orange_juice_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 98
+INFO:root:# successes: 59 (60.2%)
+
+ 80%|████████  | 8/10 [00:48<00:12,  6.50s/it][AINFO:root:
+Task: pick up the orange juice and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 9...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task09_episode08_pick_up_the_orange_juice_and_place_it_in_the_basket_success.mp4
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 99
+INFO:root:# successes: 60 (60.6%)
+
+ 90%|█████████ | 9/10 [00:51<00:05,  5.52s/it][AINFO:root:
+Task: pick up the orange juice and place it in the basket
+INFO:root:Prompt sent to server: ' '
+INFO:root:Starting episode 10...
+INFO:root:Saved video to: data/libero/empty_prompt_object/task09_episode09_pick_up_the_orange_juice_and_place_it_in_the_basket_failure.mp4
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 100
+INFO:root:# successes: 60 (60.0%)
+
+100%|██████████| 10/10 [00:59<00:00,  6.11s/it][A100%|██████████| 10/10 [00:59<00:00,  5.94s/it]
+INFO:root:Current task success rate: 0.4
+INFO:root:Current total success rate: 0.6
+100%|██████████| 10/10 [09:11<00:00, 55.55s/it]100%|██████████| 10/10 [09:11<00:00, 55.14s/it]
+INFO:root:Total success rate: 0.6
+INFO:root:Total episodes: 100

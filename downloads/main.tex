@@ -1,0 +1,182 @@
+\documentclass{article}
+\usepackage{url}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage{xcolor}
+\usepackage{comment}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{booktabs}
+\newcommand\shanghaonote{\textcolor{red}}
+
+\title{On the Instruction-Following Limitations of Vision-Language-Action Models on LIBERO}
+\author{Computer Security and Privacy Laboratory,\\ Washington University in St. Louis}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+Vision-Language-Action models (VLAs) are envisioned as a promising paradigm for bridging the gap between the physical world and machine intelligence. Recently, a growing number of VLA systems have been developed \cite{kim2025openvla, kim2025fine, black2024pi_0, intelligence2025pi_}, demonstrating the ability to handle a wide range of tasks. To evaluate the performance of these models, LIBERO \cite{liu2023libero} has been widely adopted, as it not only provides four task suites covering diverse types of robotic tasks, but also allows users to flexibly generate new tasks. 
+
+However, throughout our thorough experimental investigation, we find that state-of-the-art VLAs finetuned on LIBERO, including the OpenVLA and $\pi_{0.5}$ models, fail to follow instructions on almost all the robot tasks on the LIBERO benchmark. More specifically, the robotic arms \textit{ignore the language instructions} and continue executing the original tasks associated with the test scenario, even when we provide blank prompts or opposite commands such as ``\textit{Do not do ...}''. This phenomenon suggests \textit{severe overfitting} to the test scenarios, which are captured solely through visual observations, rather than genuine instruction following, which VLAs are intended to follow.
+
+Through a detailed analysis of the LIBERO benchmark, we find that such extreme overfitting is not caused by an inherent limitation of LIBERO itself, but rather by the community’s widespread but \textit{misguided use} of this well-designed benchmark. LIBERO was originally designed to generate new robotic tasks based on real-life scenes. It follows a two-step generation strategy: first generating task instructions from real scenes, and then generating simulated test scenarios, including objects, layouts, and initial parameters, \textit{based on those instructions}. Unfortunately, this design creates a strong correlation between task instructions and test scenarios, which can easily mislead the model into appearing to understand the instructions while in fact overfitting to the scenario alone. As a result, the model may succeed without ever learning to genuinely follow the instructions, especially given that many state-of-the-art VLAs are fine-tuned on such benchmarks. To mitigate this issue, we propose a more diverse and enhanced version of the LIBERO benchmark that breaks the strong correlation between task instructions and test scenarios, thereby reducing model overfitting and enabling a more faithful assessment of the instruction-following capability of VLAs.
+
+\section{Experimental Validation}
+
+We evaluate the instruction-following capability of two widely used VLA families finetuned on LIBERO: \textbf{OpenVLA-OFT} (\texttt{moojink/openvla-7b-oft-finetuned-libero-spatial-object-goal-10}) and \textbf{$\pi_{0.5}$} (\texttt{pi05\_libero}).
+
+\subsection{Experimental Setup}
+
+We focus on the three 10-task LIBERO suites that were used throughout our study: \texttt{libero\_spatial}, \texttt{libero\_object}, and \texttt{libero\_goal}. These suites differ in how strongly the scene constrains the task. In the Spatial suite, all tasks share the same high-level objective (move a black bowl onto a plate) but vary the bowl's initial location. In the Object suite, the scene contains the same basket-centered manipulation pattern but changes which grocery item should be picked up. In the Goal suite, all 10 tasks are defined over the same kitchen scene, so the language instruction is the main cue that distinguishes the desired behavior.
+
+For OpenVLA-OFT, we intentionally use the single combined checkpoint rather than suite-specific checkpoints so that the comparison to $\pi_{0.5}$ is model-to-model rather than checkpoint-to-checkpoint. We evaluate three prompt conditions: the original task description (\texttt{task}), a true empty string (\texttt{empty}), and the contradictory instruction ``don't do anything'' (\texttt{do\_nothing}). For each condition we run all 10 tasks in each suite over 10 initial states, for a total of \(3 \times 3 \times 10 \times 10 = 900\) episodes.
+
+For $\pi_{0.5}$, we use the official \texttt{openpi} LIBERO evaluation flow for the baseline run and custom evaluation scripts for prompt and scene-manipulation probes. One methodological caveat is important: in our muted-prompt $\pi_{0.5}$ client, the prompt sent to the server is a single blank space (\texttt{" "}) rather than a strict empty string. Debug traces nevertheless show that this produces only two prompt tokens, while the two camera views contribute 512 image tokens, making it a near-empty language ablation rather than a full removal of language.
+
+\subsection{OpenVLA-OFT Results}
+
+Table~\ref{tab:prompt_success_rate} reports the full 900-run OpenVLA-OFT sweep. The model follows the original task prompt well across all three suites, reaching 97--98\% success. However, the prompt ablations reveal a sharp difference across suites. In the Object suite, replacing the prompt with an empty string or the contradictory instruction ``don't do anything'' barely changes performance (96--97\% success). In the Spatial suite, success degrades but remains high (83--84\%), showing that the visual scene still carries enough information to recover the original task in most cases. In the Goal suite, by contrast, success collapses from 97\% to 10\% under both ablations. Since all Goal tasks share the same scene, this suite forces the model to rely more heavily on language than the Spatial and Object suites do.
+
+These results are already sufficient to reject a strong instruction-following claim for OpenVLA-OFT on LIBERO. The model succeeds on the original benchmark tasks, but it does not consistently condition its behavior on the prompt when the scene itself is informative enough to reveal the intended task.
+
+\begin{table}[t]
+\centering
+\caption{OpenVLA-OFT success rates under different prompt conditions across LIBERO task suites. The results use the single combined checkpoint \texttt{moojink/openvla-7b-oft-finetuned-libero-spatial-object-goal-10}.}
+\label{tab:prompt_success_rate}
+\begin{tabular}{l l c}
+\toprule
+\textbf{Task Suite} & \textbf{Prompt Condition} & \textbf{Success Rate} \\
+\midrule
+\texttt{libero\_goal}   & do\_nothing & 10\% \\
+\texttt{libero\_goal}   & empty       & 10\% \\
+\texttt{libero\_goal}   & task        & 97\% \\
+\texttt{libero\_object} & do\_nothing & 97\% \\
+\texttt{libero\_object} & empty       & 96\% \\
+\texttt{libero\_object} & task        & 97\% \\
+\texttt{libero\_spatial}& do\_nothing & 84\% \\
+\texttt{libero\_spatial}& empty       & 83\% \\
+\texttt{libero\_spatial}& task        & 98\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{$\pi_{0.5}$ Results}
+
+We first ran the official \texttt{pi05\_libero} evaluator on its default \texttt{libero\_spatial} benchmark. Over 500 episodes (10 tasks, 50 initial states each), the model achieved a total success rate of 98.4\%. This establishes that the released checkpoint is strong under the standard benchmark protocol.
+
+\begin{comment}
+\subsubsection{Task Suites}
+
+\paragraph{Spatial.}
+The Spatial suite contains 10 tasks in which the robot must pick up a bowl from different locations and place it on the plate:
+
+\begin{itemize}
+    \item pick up the black bowl between the plate and the ramekin and place it on the plate
+    \item pick up the black bowl next to the ramekin and place it on the plate
+    \item pick up the black bowl from table center and place it on the plate
+    \item pick up the black bowl on the cookie box and place it on the plate
+    \item pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate
+    \item pick up the black bowl on the ramekin and place it on the plate
+    \item pick up the black bowl next to the cookie box and place it on the plate
+    \item pick up the black bowl on the stove and place it on the plate
+    \item pick up the black bowl next to the plate and place it on the plate
+    \item pick up the black bowl on the wooden cabinet and place it on the plate
+\end{itemize}
+
+\paragraph{Object.}
+The Object suite contains 10 tasks requiring the robot to identify the object specified in the prompt and place it into a basket:
+
+\begin{itemize}
+    \item pick up the alphabet soup and place it in the basket
+    \item pick up the cream cheese and place it in the basket
+    \item pick up the salad dressing and place it in the basket
+    \item pick up the bbq sauce and place it in the basket
+    \item pick up the ketchup and place it in the basket
+    \item pick up the tomato sauce and place it in the basket
+    \item pick up the butter and place it in the basket
+    \item pick up the milk and place it in the basket
+    \item pick up the chocolate pudding and place it in the basket
+    \item pick up the orange juice and place it in the basket
+\end{itemize}
+
+\paragraph{Goal.}
+The Goal suite contains 10 tasks defined over the same scene, where the required action changes according to the prompt:
+
+\begin{itemize}
+    \item open the middle drawer of the cabinet
+    \item put the bowl on the stove
+    \item put the wine bottle on top of the cabinet
+    \item open the top drawer and put the bowl inside
+    \item put the bowl on top of the cabinet
+    \item push the plate to the front of the stove
+    \item put the cream cheese in the bowl
+    \item turn on the stove
+    \item put the bowl on the plate
+    \item put the wine bottle on the rack
+\end{itemize}
+
+\end{comment}
+
+\subsubsection{Prompt Ablations}
+
+We then evaluated $\pi_{0.5}$ under the near-empty prompt condition described above. The effect depends strongly on the suite. In the Spatial suite, success drops from 98.4\% in the official benchmark run to \(61/100\). In the Object suite, success is \(60/100\) over 100 episodes. In the Goal suite, where all tasks share one scene and differ only in instruction, success collapses to \(3/50\) (6\%).
+
+This pattern matches the OpenVLA-OFT results. When the scene itself strongly identifies the task, muted or contradictory language causes only a partial drop. When multiple tasks share the same scene and language is the primary source of task identity, the model fails.
+
+Our debug instrumentation provides additional evidence for this interpretation. For the muted prompt \texttt{" "}, the $\pi_{0.5}$ server logs show that the prompt still tokenizes into two active prompt tokens, but the prefix is dominated by visual tokens from the two camera views. We also compared the same Object-scene observation under a blank-space prompt and under ``Don't do anything.'' The final action chunk changed only slightly, and the arm still executed the same pickup behavior.
+
+\begin{table}[t]
+\centering
+\caption{$\pi_{0.5}$ baseline and ablation results discussed in this work.}
+\label{tab:pi05_ablation}
+\begin{tabular}{l l c c}
+\toprule
+\textbf{Setting} & \textbf{Task Suite} & \textbf{Episodes} & \textbf{Success Rate} \\
+\midrule
+Official baseline & \texttt{libero\_spatial} & 500 & 98.4\% \\
+Muted prompt (\texttt{" "}) & \texttt{libero\_spatial} & 100 & 61\% \\
+Muted prompt (\texttt{" "}) & \texttt{libero\_object} & 100 & 60\% \\
+Muted prompt (\texttt{" "}) & \texttt{libero\_goal} & 50 & 6\% \\
+Seeded object-position shuffle & \texttt{libero\_object} & 100 & 23\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Compositional Prompt Probing}
+
+We conducted several additional prompt edits to probe whether the model composes language or simply recalls memorized action patterns. The model successfully executes both ``open the middle drawer of the cabinet'' and ``open the top drawer and put the bowl inside.'' However, when prompted with ``open the middle drawer and put the bowl inside,'' the arm still opened the \emph{top} drawer and placed the bowl inside.
+
+Similarly, the model can execute both ``put the bowl on the stove'' and ``put the wine bottle on the rack.'' However, when prompted with ``put the wine bottle on the stove,'' the arm still placed the wine bottle on the rack.
+
+Interestingly, the prompt ``cream cheese stove'' caused the robot to first perform ``put the cream cheese in the bowl'' and then ``put the bowl on the stove.''
+
+These behaviors suggest that the model may be recombining memorized action patterns in a shallow way, rather than composing instructions through robust semantic understanding.
+
+\subsubsection{Scene-Structure Probes}
+
+We further explored the Object suite by modifying the scene configuration. Inspection of the LIBERO task specification files revealed explicit region labels such as \texttt{target\_object\_region} and \texttt{other\_object\_region}. In the task ``pick up the cream cheese and place it in the basket,'' for example, the cream cheese is initially placed in a designated target region while distractor objects such as milk occupy other regions.
+
+We first tested this task by swapping the planar positions of the cream cheese and the milk while keeping each object's original orientation and height. After the swap, the robotic arm picked up the \emph{milk} and placed it into the basket. This is a direct qualitative failure of object grounding: the prompt still names cream cheese, but the model follows the positional prior associated with the target region.
+
+We then performed a full seeded shuffle test in which the planar positions of all six movable objects (excluding the basket) were randomly permuted across all 10 Object tasks. Each task was evaluated on 10 distinct initial states, for a total of \(10 \times 10 = 100\) episodes. Under this setting, the success rate dropped to \(23/100\), as shown in Table~\ref{tab:pi05_ablation}.
+
+Taken together, the prompt ablations, compositional edits, and shuffle experiments indicate that $\pi_{0.5}$ relies heavily on scene layout and memorized action templates, rather than robust language grounding or object-level understanding.
+
+\subsection{Experiment Videos}
+
+The full experiment videos are available at:
+
+\begin{quote}
+\url{https://drive.google.com/drive/folders/1mXgoZdN2eaEeNawz7bFP3XGXloh1Edzf?usp=drive_link}
+\end{quote}
+
+\section{Findings and Discussion}
+
+\bibliographystyle{plain}
+\bibliography{reference}
+
+\end{document}

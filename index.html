@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>On the Instruction-Following Limitations of Vision-Language-Action Models on LIBERO</title>
+  <meta
+    name="description"
+    content="Academic project page showing that LIBERO-finetuned VLAs often recover the task from scene structure rather than from the prompt, with Spatial/Object evidence foregrounded."
+  >
+  <meta
+    property="og:title"
+    content="On the Instruction-Following Limitations of Vision-Language-Action Models on LIBERO"
+  >
+  <meta
+    property="og:description"
+    content="A restrained research page with video evidence for scene shortcutting in OpenVLA-OFT and pi0.5 on LIBERO."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="static/images/social_preview.svg">
+  <link rel="icon" href="static/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+  <main class="page">
+    <section id="top" class="title-block">
+      <div class="page-shell">
+        <div id="hero-root"></div>
+      </div>
+    </section>
+
+    <section id="core-claim" class="paper-section">
+      <div class="page-shell">
+        <div class="section-header">
+          <div class="section-number">01</div>
+          <div>
+            <h2>Core Claim</h2>
+            <p class="section-lead">The strongest benchmark issue appears in Spatial and Object, where scene identity and task identity are entangled.</p>
+          </div>
+        </div>
+        <div id="core-claim-root"></div>
+      </div>
+    </section>
+
+    <section id="why-problem" class="paper-section">
+      <div class="page-shell">
+        <div class="section-header">
+          <div class="section-number">02</div>
+          <div>
+            <h2>Why This Is A Problem</h2>
+            <p class="section-lead">Benchmark success is not enough if the scene already tells the model what to do.</p>
+          </div>
+        </div>
+        <div id="why-problem-root"></div>
+      </div>
+    </section>
+
+    <section id="openvla" class="paper-section">
+      <div class="page-shell">
+        <div class="section-header">
+          <div class="section-number">03</div>
+          <div>
+            <h2>OpenVLA-OFT</h2>
+            <p class="section-lead">Spatial and Object are the primary evidence. Goal is included later as a control for when language actually has to disambiguate the behavior.</p>
+          </div>
+        </div>
+        <div id="openvla-root"></div>
+      </div>
+    </section>
+
+    <section id="pi05" class="paper-section">
+      <div class="page-shell">
+        <div class="section-header">
+          <div class="section-number">04</div>
+          <div>
+            <h2>pi0.5</h2>
+            <p class="section-lead">The same pattern appears in OpenPI's LIBERO-tuned model, then becomes clearer under prompt edits and scene-layout probes.</p>
+          </div>
+        </div>
+        <div id="pi05-root"></div>
+      </div>
+    </section>
+
+    <section id="shortcuts" class="paper-section">
+      <div class="page-shell">
+        <div class="section-header">
+          <div class="section-number">05</div>
+          <div>
+            <h2>Scene Shortcut Mechanism</h2>
+            <p class="section-lead">The cream-cheese task provides a concrete mechanism-level probe for target-region shortcutting.</p>
+          </div>
+        </div>
+        <div id="shortcut-root"></div>
+      </div>
+    </section>
+
+    <section id="composition" class="paper-section">
+      <div class="page-shell">
+        <div class="section-header">
+          <div class="section-number">06</div>
+          <div>
+            <h2>Compositional Prompt Probing</h2>
+            <p class="section-lead">Goal appears here as supporting evidence: a same-scene setting that exposes shallow recombination rather than robust composition.</p>
+          </div>
+        </div>
+        <div id="composition-root"></div>
+      </div>
+    </section>
+
+    <section id="method" class="paper-section">
+      <div class="page-shell">
+        <div class="section-header">
+          <div class="section-number">07</div>
+          <div>
+            <h2>Method And Caveats</h2>
+            <p class="section-lead">What was run, what the videos represent, and what caveats matter for interpretation.</p>
+          </div>
+        </div>
+        <div id="method-root"></div>
+      </div>
+    </section>
+
+    <section id="artifacts" class="paper-section">
+      <div class="page-shell">
+        <div class="section-header">
+          <div class="section-number">08</div>
+          <div>
+            <h2>Artifacts</h2>
+            <p class="section-lead">The page foregrounds the strongest evidence. The remaining folders, CSVs, logs, and manuscript source are available below.</p>
+          </div>
+        </div>
+        <div id="artifacts-root"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <div class="page-shell footer-inner">
+      <span>Static project page for research discussion.</span>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <script src="data/content.js"></script>
+  <script src="static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Project social preview">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#fbf6ef"/>
+      <stop offset="100%" stop-color="#efe4d3"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="150" cy="110" r="70" fill="#b44a1f" opacity="0.18"/>
+  <circle cx="1090" cy="120" r="90" fill="#1f5c79" opacity="0.14"/>
+  <circle cx="1030" cy="520" r="120" fill="#7f8c57" opacity="0.12"/>
+  <rect x="70" y="70" width="1060" height="490" rx="36" fill="#fffaf2" stroke="#e0d4c4"/>
+  <text x="110" y="185" fill="#b44a1f" font-family="IBM Plex Sans, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="3">EVIDENCE-FIRST PROJECT PAGE</text>
+  <text x="110" y="290" fill="#1f2430" font-family="Space Grotesk, Arial, sans-serif" font-size="68" font-weight="700">
+    <tspan x="110" dy="0">Do LIBERO-finetuned</tspan>
+    <tspan x="110" dy="78">VLAs actually follow</tspan>
+    <tspan x="110" dy="78">instructions?</tspan>
+  </text>
+  <text x="110" y="498" fill="#536070" font-family="IBM Plex Sans, Arial, sans-serif" font-size="32">
+    OpenVLA-OFT and pi0.5 on LIBERO: prompt ablations, same-scene failures,
+  </text>
+  <text x="110" y="540" fill="#536070" font-family="IBM Plex Sans, Arial, sans-serif" font-size="32">
+    and object-layout shortcut evidence.
+  </text>
+</svg>
