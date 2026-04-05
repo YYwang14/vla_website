@@ -16,101 +16,30 @@
     byId("hero-root").innerHTML = `
       <div class="hero">
         <h1 class="hero-title">${escapeHtml(content.hero.title)}</h1>
+        <p class="hero-lab">${escapeHtml(content.hero.lab)}</p>
         <p class="hero-subtitle">${escapeHtml(content.hero.subtitle)}</p>
-        <div class="hero-links">
-          ${content.hero.links
-            .map(
-              (link) =>
-                `<a href="${escapeHtml(link.href)}"${link.external ? ' target="_blank" rel="noreferrer"' : ""}>${escapeHtml(link.label)}</a>`
-            )
-            .join("")}
-        </div>
       </div>
     `;
   }
 
-  function renderCoreClaim() {
-    byId("core-claim-root").innerHTML = `
-      <div class="claim-grid">
-        ${content.core_claim_stats
-          .map(
-            (item) => `
-              <article class="claim-card">
-                <div class="claim-card-label">${escapeHtml(item.label)}</div>
-                <div class="claim-card-value">${escapeHtml(item.value)}</div>
-                <div class="claim-card-note">${escapeHtml(item.note)}</div>
-              </article>
-            `
-          )
-          .join("")}
-      </div>
-      <p class="section-text">${escapeHtml(content.sections.core_claim.intro)}</p>
+  function renderIntroduction() {
+    byId("introduction-root").innerHTML = `
+      ${content.sections.introduction.paragraphs
+        .map((paragraph) => `<p class="section-text">${escapeHtml(paragraph)}</p>`)
+        .join("")}
     `;
   }
 
-  function renderParagraphs(rootId, paragraphs) {
-    byId(rootId).innerHTML = paragraphs
-      .map((paragraph) => `<p class="section-text">${escapeHtml(paragraph)}</p>`)
-      .join("");
-  }
-
-  function renderOpenVlaTable(rows) {
-    const suiteOrder = ["libero_spatial", "libero_object", "libero_goal"];
-    const promptOrder = ["task", "empty", "do_nothing"];
-    const suiteLabels = {
-      libero_spatial: "Spatial",
-      libero_object: "Object",
-      libero_goal: "Goal",
-    };
-    const promptLabels = {
-      task: "Task",
-      empty: "Empty",
-      do_nothing: "Do nothing",
-    };
-
+  function renderOverallResultsTable(rows) {
     return `
       <div class="table-block">
-        <div class="table-title">OpenVLA-OFT prompt sweep (900 episodes)</div>
-        <table class="openvla-table">
+        <div class="table-title">Overall results on Spatial and Object</div>
+        <table class="results-table">
           <thead>
             <tr>
-              <th>Suite</th>
-              ${promptOrder.map((prompt) => `<th>${escapeHtml(promptLabels[prompt])}</th>`).join("")}
-            </tr>
-          </thead>
-          <tbody>
-            ${suiteOrder
-              .map((suite) => {
-                const rowClass = suite === "libero_goal" ? "control-row" : "primary-evidence";
-                return `
-                  <tr class="${rowClass}">
-                    <td>${escapeHtml(suiteLabels[suite])}</td>
-                    ${promptOrder
-                      .map((prompt) => {
-                        const row = rows.find((item) => item.task_suite === suite && item.prompt_condition === prompt);
-                        return `<td>${escapeHtml((row.success_rate * 100).toFixed(0) + "%")}</td>`;
-                      })
-                      .join("")}
-                  </tr>
-                `;
-              })
-              .join("")}
-          </tbody>
-        </table>
-      </div>
-    `;
-  }
-
-  function renderPi05Table(rows) {
-    return `
-      <div class="table-block">
-        <div class="table-title">pi0.5 baseline and prompt/scene probes</div>
-        <table class="pi05-table">
-          <thead>
-            <tr>
-              <th>Setting</th>
-              <th>Suite</th>
-              <th>Episodes</th>
+              <th>Model</th>
+              <th>Condition</th>
+              <th>Scope</th>
               <th>Result</th>
             </tr>
           </thead>
@@ -119,10 +48,10 @@
               .map(
                 (row) => `
                   <tr>
-                    <td>${escapeHtml(row.setting)}</td>
-                    <td>${escapeHtml(row.suite)}</td>
-                    <td>${escapeHtml(row.episodes)}</td>
-                    <td>${escapeHtml(row.success)}</td>
+                    <td>${escapeHtml(row.model)}</td>
+                    <td>${escapeHtml(row.condition)}</td>
+                    <td>${escapeHtml(row.scope)}</td>
+                    <td>${escapeHtml(row.result)}</td>
                   </tr>
                 `
               )
@@ -188,89 +117,42 @@
     `;
   }
 
+  function renderResults() {
+    byId("results-root").innerHTML = `
+      <p class="section-text">${escapeHtml(content.sections.results.intro)}</p>
+      ${renderOverallResultsTable(content.overall_results)}
+      <div class="highlight-claim">${escapeHtml(content.sections.results.highlight)}</div>
+    `;
+  }
+
   function renderOpenVla() {
     byId("openvla-root").innerHTML = `
       <p class="section-text">${escapeHtml(content.sections.openvla.intro)}</p>
-      <p class="section-note">${escapeHtml(content.sections.openvla.note)}</p>
-      ${renderOpenVlaTable(content.table_rows.openvla)}
       ${renderVideoModules(content.openvla_modules)}
+      <div class="section-conclusion">${escapeHtml(content.sections.openvla.conclusion)}</div>
     `;
   }
 
   function renderPi05() {
     byId("pi05-root").innerHTML = `
       <p class="section-text">${escapeHtml(content.sections.pi05.intro)}</p>
-      ${renderPi05Table(content.table_rows.pi05)}
-      <div class="note-block">
-        <strong>Important caveat.</strong>
-        <p class="section-text">${escapeHtml(content.sections.pi05.caveat)}</p>
-      </div>
       ${renderVideoModules(content.pi05_modules)}
+      <p class="section-note">${escapeHtml(content.sections.pi05.note)}</p>
     `;
   }
 
-  function renderMethod() {
-    byId("method-root").innerHTML = `
-      <div class="method-grid">
-        ${content.sections.method.cards
-          .map(
-            (card) => `
-              <article class="method-card">
-                <h3>${escapeHtml(card.title)}</h3>
-                <p class="section-text">${escapeHtml(card.body)}</p>
-              </article>
-            `
-          )
-          .join("")}
-      </div>
-      ${content.sections.method.notes
-        .map((note) => `<p class="section-note">${escapeHtml(note)}</p>`)
+  function renderShuffle() {
+    byId("shuffle-root").innerHTML = `
+      <p class="section-text">${escapeHtml(content.sections.shuffle.intro)}</p>
+      ${renderVideoModules(content.shortcut_modules)}
+    `;
+  }
+
+  function renderConclusion() {
+    byId("conclusion-root").innerHTML = `
+      ${content.sections.conclusion.paragraphs
+        .map((paragraph) => `<p class="section-text">${escapeHtml(paragraph)}</p>`)
         .join("")}
-    `;
-  }
-
-  function renderArtifacts() {
-    byId("artifacts-root").innerHTML = `
-      <p class="artifact-intro">${escapeHtml(content.sections.artifacts.intro)}</p>
-      <div class="download-grid">
-        ${content.downloads
-          .map(
-            (download) => `
-              <article class="download-card">
-                <a href="${escapeHtml(download.href)}">${escapeHtml(download.label)}</a>
-              </article>
-            `
-          )
-          .join("")}
-      </div>
-      <div class="artifact-browser">
-        ${content.artifact_groups
-          .map(
-            (group) => `
-              <details class="artifact-group">
-                <summary>
-                  <div class="artifact-summary">
-                    <span class="artifact-title">${escapeHtml(group.title)}</span>
-                    <span class="artifact-count">${group.files.length} files</span>
-                  </div>
-                </summary>
-                <div class="artifact-body">
-                  <p class="artifact-description">${escapeHtml(group.description)}</p>
-                  <ul class="artifact-list">
-                    ${group.files
-                      .map(
-                        (file) => `
-                          <li><a href="${escapeHtml(file.src)}">${escapeHtml(file.name)}</a></li>
-                        `
-                      )
-                      .join("")}
-                  </ul>
-                </div>
-              </details>
-            `
-          )
-          .join("")}
-      </div>
     `;
   }
 
@@ -346,20 +228,12 @@
   }
 
   renderHero();
-  renderCoreClaim();
-  renderParagraphs("why-problem-root", content.sections.why_problem.paragraphs);
+  renderIntroduction();
+  renderResults();
   renderOpenVla();
   renderPi05();
-  byId("shortcut-root").innerHTML = `
-    <p class="section-text">${escapeHtml(content.sections.shortcuts.intro)}</p>
-    ${renderVideoModules(content.shortcut_modules)}
-  `;
-  byId("composition-root").innerHTML = `
-    <p class="section-text">${escapeHtml(content.sections.composition.intro)}</p>
-    ${renderVideoModules(content.composition_modules)}
-  `;
-  renderMethod();
-  renderArtifacts();
+  renderShuffle();
+  renderConclusion();
   wireLazyVideos();
   wirePlaybackControls();
 })();
