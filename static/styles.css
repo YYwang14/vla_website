@@ -129,7 +129,6 @@ a {
   letter-spacing: -0.02em;
 }
 
-.section-lead,
 .section-text,
 .section-note,
 .artifact-intro {
@@ -314,6 +313,10 @@ a {
   margin: 0;
   color: var(--muted);
   font-size: 0.93rem;
+}
+
+.video-caption {
+  white-space: pre-line;
 }
 
 .video-notes {

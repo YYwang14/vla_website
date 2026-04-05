@@ -10,6 +10,8 @@
       .replaceAll('"', "&quot;")
       .replaceAll("'", "&#39;");
 
+  const formatInlineText = (value) => escapeHtml(value).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+
   const byId = (value) => document.getElementById(value);
 
   function renderHero() {
@@ -25,7 +27,7 @@
   function renderIntroduction() {
     byId("introduction-root").innerHTML = `
       ${content.sections.introduction.paragraphs
-        .map((paragraph) => `<p class="section-text">${escapeHtml(paragraph)}</p>`)
+        .map((paragraph) => `<p class="section-text">${formatInlineText(paragraph)}</p>`)
         .join("")}
     `;
   }
@@ -121,31 +123,30 @@
 
   function renderResults() {
     byId("results-root").innerHTML = `
-      <p class="section-text">${escapeHtml(content.sections.results.intro)}</p>
+      <p class="section-text">${formatInlineText(content.sections.results.intro)}</p>
       ${renderOverallResultsTable(content.overall_results)}
-      <div class="highlight-claim">${escapeHtml(content.sections.results.highlight)}</div>
+      <div class="highlight-claim">${formatInlineText(content.sections.results.highlight)}</div>
     `;
   }
 
   function renderOpenVla() {
     byId("openvla-root").innerHTML = `
-      <p class="section-text">${escapeHtml(content.sections.openvla.intro)}</p>
+      <p class="section-text">${formatInlineText(content.sections.openvla.intro)}</p>
       ${renderVideoModules(content.openvla_modules)}
-      <div class="section-conclusion">${escapeHtml(content.sections.openvla.conclusion)}</div>
+      <div class="section-conclusion">${formatInlineText(content.sections.openvla.conclusion)}</div>
     `;
   }
 
   function renderPi05() {
     byId("pi05-root").innerHTML = `
-      <p class="section-text">${escapeHtml(content.sections.pi05.intro)}</p>
+      <p class="section-text">${formatInlineText(content.sections.pi05.intro)}</p>
       ${renderVideoModules(content.pi05_modules)}
-      <p class="section-note">${escapeHtml(content.sections.pi05.note)}</p>
     `;
   }
 
   function renderShuffle() {
     byId("shuffle-root").innerHTML = `
-      <p class="section-text">${escapeHtml(content.sections.shuffle.intro)}</p>
+      <p class="section-text">${formatInlineText(content.sections.shuffle.intro)}</p>
       ${renderVideoModules(content.shortcut_modules)}
     `;
   }
@@ -153,7 +154,7 @@
   function renderConclusion() {
     byId("conclusion-root").innerHTML = `
       ${content.sections.conclusion.paragraphs
-        .map((paragraph) => `<p class="section-text">${escapeHtml(paragraph)}</p>`)
+        .map((paragraph) => `<p class="section-text">${formatInlineText(paragraph)}</p>`)
         .join("")}
     `;
   }
