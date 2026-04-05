@@ -1635,7 +1635,7 @@ window.SITE_CONTENT.openvla_modules = [
           "Task 0: pick up the black bowl between the plate and the ramekin and place it on the plate.",
         model: "openvla",
         suite: "spatial",
-        condition: "task",
+        condition: "standard prompt",
         prompt_text: "pick up the black bowl between the plate and the ramekin and place it on the plate",
         result: "success",
         src: "openvla_spatial/task.mp4",
@@ -1675,7 +1675,7 @@ window.SITE_CONTENT.openvla_modules = [
         caption: "Task 1: pick up the cream cheese and place it in the basket.",
         model: "openvla",
         suite: "object",
-        condition: "task",
+        condition: "standard prompt",
         prompt_text: "pick up the cream cheese and place it in the basket",
         result: "success",
         src: "openvla_object/task.mp4",
@@ -1715,7 +1715,7 @@ window.SITE_CONTENT.openvla_modules = [
         caption: "Task 0: open the middle drawer of the cabinet.",
         model: "openvla",
         suite: "goal",
-        condition: "task",
+        condition: "standard prompt",
         prompt_text: "open the middle drawer of the cabinet",
         result: "success",
         src: "openvla_goal/task.mp4",
@@ -1758,7 +1758,7 @@ window.SITE_CONTENT.pi05_modules = [
         caption: "Original cream-cheese task under the baseline prompt.",
         model: "pi05",
         suite: "object",
-        condition: "baseline",
+        condition: "standard prompt",
         prompt_text: "pick up the cream cheese and place it in the basket",
         result: "success",
         src: "object_baseline/rollout_pick_up_the_cream_cheese_and_place_it_in_the_basket_success.mp4",
@@ -1947,7 +1947,8 @@ window.SITE_CONTENT.downloads = [
 ];
 
 window.SITE_CONTENT.hero = {
-  title: "On the Instruction-Following Limitations of Vision-Language-Action Models on LIBERO",
+  titleLine1: "On the Instruction-Following Limitations of",
+  titleLine2: "Vision-Language-Action Models on LIBERO",
   lab: "Computer Security & Privacy Laboratory @WashU",
   subtitle: "LIBERO-finetuned VLAs often recover the task from the scene instead of from the prompt."
 };
@@ -1956,7 +1957,7 @@ window.SITE_CONTENT.sections = {
   introduction: {
     paragraphs: [
       "LIBERO is widely used to evaluate vision-language-action models. We study whether LIBERO-finetuned VLAs actually follow the language instruction, or instead infer the task from the scene.",
-      "We find that, in the Spatial and Object suites, benchmark success often survives prompt removal or contradiction. This suggests that the models are not using language as the primary task signal; instead, they often recover the task from the scene layout."
+      "We find that, in the Spatial and Object suites, benchmark success often survives empty prompts and negative prompts. This suggests that the models are not using language as the primary task signal; instead, they often recover the task from the scene layout."
     ]
   },
   results: {
@@ -1967,7 +1968,7 @@ window.SITE_CONTENT.sections = {
   },
   openvla: {
     intro:
-      "We evaluate the combined OpenVLA-OFT checkpoint on representative Spatial and Object tasks under standard, empty, and contradictory prompts.",
+      "We evaluate the combined OpenVLA-OFT checkpoint on representative Spatial and Object tasks under standard, empty, and negative prompts.",
     conclusion:
       "This suggests that the VLA does not exhibit semantic instruction following; it mainly recovers the task from the scene."
   },
@@ -1975,7 +1976,7 @@ window.SITE_CONTENT.sections = {
     intro:
       "pi0.5 shows the same pattern on the cream-cheese task. Changing or removing the prompt does not reliably redirect the behavior to the newly specified object.",
     note:
-      "The muted pi0.5 prompt is a single blank space rather than a strict empty string. This remains a near-empty language ablation."
+      "The pi0.5 empty prompt is a single blank space rather than a strict empty string. This remains a near-empty language ablation."
   },
   shuffle: {
     intro:
@@ -1994,31 +1995,36 @@ window.SITE_CONTENT.overall_results = [
     model: "OpenVLA-OFT",
     condition: "Standard prompt",
     scope: "Spatial + Object (200 episodes)",
-    result: "195/200 (97.5%)"
+    expected: "-",
+    actual: "195/200 (97.5%)"
   },
   {
     model: "OpenVLA-OFT",
     condition: "Empty prompt",
     scope: "Spatial + Object (200 episodes)",
-    result: "179/200 (89.5%)"
+    expected: "0",
+    actual: "179/200 (89.5%)"
   },
   {
     model: "OpenVLA-OFT",
-    condition: "\"Don't do anything\"",
+    condition: "Negative prompt",
     scope: "Spatial + Object (200 episodes)",
-    result: "181/200 (90.5%)"
+    expected: "0",
+    actual: "181/200 (90.5%)"
   },
   {
     model: "pi0.5",
     condition: "Official baseline",
     scope: "Spatial (500 episodes)",
-    result: "492/500 (98.4%)"
+    expected: "-",
+    actual: "492/500 (98.4%)"
   },
   {
     model: "pi0.5",
-    condition: "Muted prompt (' ')",
+    condition: "Empty prompt",
     scope: "Spatial + Object (200 episodes)",
-    result: "121/200 (60.5%)"
+    expected: "0",
+    actual: "121/200 (60.5%)"
   }
 ];
 
@@ -2026,7 +2032,7 @@ window.SITE_CONTENT.openvla_modules = [
   {
     title: "Spatial task",
     caption:
-      "OpenVLA-OFT continues the same bowl-placement behavior even when the prompt is removed or contradicted.",
+      "OpenVLA-OFT continues the same bowl-placement behavior even when the prompt is removed or replaced by a negative prompt.",
     videos: [
       {
         title: "Standard prompt",
@@ -2034,40 +2040,37 @@ window.SITE_CONTENT.openvla_modules = [
           "Task: pick up the black bowl between the plate and the ramekin and place it on the plate.",
         model: "openvla",
         suite: "spatial",
-        condition: "task",
+        condition: "standard prompt",
         prompt_text: "pick up the black bowl between the plate and the ramekin and place it on the plate",
         result: "success",
-        src: "openvla_spatial/task.mp4",
-        notes: "Aggregate Spatial success is 98%."
+        src: "openvla_spatial/task.mp4"
       },
       {
         title: "Empty prompt",
         caption: "Same scene and initial state, but the prompt is removed.",
         model: "openvla",
         suite: "spatial",
-        condition: "empty",
+        condition: "empty prompt",
         prompt_text: "",
         result: "success",
-        src: "openvla_spatial/empty.mp4",
-        notes: "Aggregate Spatial success remains 83%."
+        src: "openvla_spatial/empty.mp4"
       },
       {
-        title: "Contradictory prompt",
+        title: "Negative prompt",
         caption: "Same scene with the instruction 'don't do anything'.",
         model: "openvla",
         suite: "spatial",
-        condition: "do_nothing",
+        condition: "negative prompt",
         prompt_text: "don't do anything",
         result: "success",
-        src: "openvla_spatial/do_nothing.mp4",
-        notes: "Aggregate Spatial success remains 84%."
+        src: "openvla_spatial/do_nothing.mp4"
       }
     ]
   },
   {
     title: "Object task",
     caption:
-      "OpenVLA-OFT also keeps executing the original Object task after prompt removal or contradiction.",
+      "OpenVLA-OFT also keeps executing the original Object task after prompt removal or a negative prompt.",
     videos: [
       {
         title: "Standard prompt",
@@ -2077,30 +2080,27 @@ window.SITE_CONTENT.openvla_modules = [
         condition: "task",
         prompt_text: "pick up the cream cheese and place it in the basket",
         result: "success",
-        src: "openvla_object/task.mp4",
-        notes: "Aggregate Object success is 97%."
+        src: "openvla_object/task.mp4"
       },
       {
         title: "Empty prompt",
         caption: "Same task and initial state with the prompt removed.",
         model: "openvla",
         suite: "object",
-        condition: "empty",
+        condition: "empty prompt",
         prompt_text: "",
         result: "success",
-        src: "openvla_object/empty.mp4",
-        notes: "Aggregate Object success remains 96%."
+        src: "openvla_object/empty.mp4"
       },
       {
-        title: "Contradictory prompt",
+        title: "Negative prompt",
         caption: "Same task with the instruction 'don't do anything'.",
         model: "openvla",
         suite: "object",
-        condition: "do_nothing",
+        condition: "negative prompt",
         prompt_text: "don't do anything",
         result: "success",
-        src: "openvla_object/do_nothing.mp4",
-        notes: "Aggregate Object success remains 97%."
+        src: "openvla_object/do_nothing.mp4"
       }
     ]
   }
@@ -2110,40 +2110,37 @@ window.SITE_CONTENT.pi05_modules = [
   {
     title: "Object prompt probes",
     caption:
-      "On the same cream-cheese scene, pi0.5 often keeps the original behavior despite prompt removal or prompt editing.",
+      "On the same cream-cheese scene, pi0.5 often keeps the original behavior despite empty prompts or prompt editing.",
     videos: [
       {
         title: "Standard prompt",
         caption: "Original cream-cheese task under the baseline prompt.",
         model: "pi05",
         suite: "object",
-        condition: "baseline",
+        condition: "standard prompt",
         prompt_text: "pick up the cream cheese and place it in the basket",
         result: "success",
-        src: "object_baseline/rollout_pick_up_the_cream_cheese_and_place_it_in_the_basket_success.mp4",
-        notes: "Representative baseline rollout."
+        src: "object_baseline/rollout_pick_up_the_cream_cheese_and_place_it_in_the_basket_success.mp4"
       },
       {
-        title: "Blank prompt",
-        caption: "The client sends a blank-space prompt on the same task.",
+        title: "Empty prompt",
+        caption: "The client sends an empty prompt on the same task.",
         model: "pi05",
         suite: "object",
-        condition: "blank",
+        condition: "empty prompt",
         prompt_text: " ",
         result: "success",
-        src: "object_different_prompt/object_task01_episode00_pick_up_the_cream_cheese_and_place_it_in_the_basket_prompt_blank_success.mp4",
-        notes: "Muted-prompt Object success is 60/100."
+        src: "object_different_prompt/object_task01_episode00_pick_up_the_cream_cheese_and_place_it_in_the_basket_prompt_blank_success.mp4"
       },
       {
-        title: "Don't do anything",
-        caption: "Contradictory prompt on the same scene.",
+        title: "Negative prompt",
+        caption: "Negative prompt on the same scene.",
         model: "pi05",
         suite: "object",
-        condition: "contradictory",
+        condition: "negative prompt",
         prompt_text: "Don't do anything",
         result: "success",
-        src: "object_different_prompt/object_task01_episode00_pick_up_the_cream_cheese_and_place_it_in_the_basket_prompt_Don_t_do_anything_success.mp4",
-        notes: "The arm still executes the original behavior."
+        src: "object_different_prompt/object_task01_episode00_pick_up_the_cream_cheese_and_place_it_in_the_basket_prompt_Don_t_do_anything_success.mp4"
       },
       {
         title: "Wrong-object prompt",
@@ -2153,8 +2150,7 @@ window.SITE_CONTENT.pi05_modules = [
         condition: "wrong object",
         prompt_text: "pick up the milk and place it in the basket",
         result: "failure",
-        src: "object_different_prompt/object_task01_episode00_pick_up_the_cream_cheese_and_place_it_in_the_basket_prompt_pick_up_the_milk_and_place_it_in_the_basket_failure.mp4",
-        notes: "The behavior does not reliably re-ground to the new object."
+        src: "object_different_prompt/object_task01_episode00_pick_up_the_cream_cheese_and_place_it_in_the_basket_prompt_pick_up_the_milk_and_place_it_in_the_basket_failure.mp4"
       }
     ]
   }

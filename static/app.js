@@ -15,7 +15,7 @@
   function renderHero() {
     byId("hero-root").innerHTML = `
       <div class="hero">
-        <h1 class="hero-title">${escapeHtml(content.hero.title)}</h1>
+        <h1 class="hero-title">${escapeHtml(content.hero.titleLine1)}<br>${escapeHtml(content.hero.titleLine2)}</h1>
         <p class="hero-lab">${escapeHtml(content.hero.lab)}</p>
         <p class="hero-subtitle">${escapeHtml(content.hero.subtitle)}</p>
       </div>
@@ -40,7 +40,8 @@
               <th>Model</th>
               <th>Condition</th>
               <th>Scope</th>
-              <th>Result</th>
+              <th>Expected Success Rate</th>
+              <th>Actual Success Rate</th>
             </tr>
           </thead>
           <tbody>
@@ -51,7 +52,8 @@
                     <td>${escapeHtml(row.model)}</td>
                     <td>${escapeHtml(row.condition)}</td>
                     <td>${escapeHtml(row.scope)}</td>
-                    <td>${escapeHtml(row.result)}</td>
+                    <td>${escapeHtml(row.expected)}</td>
+                    <td>${escapeHtml(row.actual)}</td>
                   </tr>
                 `
               )
