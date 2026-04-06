@@ -16,13 +16,13 @@ window.SITE_CONTENT = {
       intro:
         "We summarize on Spatial and Object task suites, where each task is paired with a different scene and shortcutting is most visible. The table below distills the main finding across those suites.",
       highlight:
-        "LIBERO-finetuned VLAs often recover the task from the scene instead of from the prompt.",
+        "LIBERO-finetuned VLAs appear to overfit to scenes, implicitly inferring the task from the scene rather than relying on the language prompt.",
     },
     openvla: {
       intro:
         "This section shows representative examples for the OpenVLA model under standard, empty, and negative prompts.",
       conclusion:
-        "This suggests that the VLA does not exhibit semantic instruction following; it just overfits to the scene",
+        "This suggests that the VLA does not faithfully follow semantic instructions, but instead overfits to the scene.",
     },
     pi05: {
       intro:
@@ -65,14 +65,14 @@ window.SITE_CONTENT = {
       actual: "181/200 (90.5%)",
     },
     {
-      model: "pi0.5",
+      model: "Pi0.5",
       condition: "Official baseline",
       scope: "Spatial + Object (500 episodes)",
       expected: "-",
       actual: "492/500 (98.4%)",
     },
     {
-      model: "pi0.5",
+      model: "Pi0.5",
       condition: "Empty prompt",
       scope: "Spatial + Object (200 episodes)",
       expected: "0%",
@@ -161,12 +161,12 @@ window.SITE_CONTENT = {
     {
       title: "Object task",
       caption:
-        "On the same cream-cheese scene, pi0.5 often keeps the original behavior despite empty prompts or prompt editing.",
+        "On the same cream-cheese scene, Pi0.5 often keeps the original behavior despite empty prompts or prompt editing.",
       videos: [
         {
           title: "Standard prompt",
           caption: "Original cream-cheese task under the baseline prompt.",
-          model: "pi05",
+          model: "Pi05",
           suite: "object",
           condition: "standard prompt",
           prompt_text: "pick up the cream cheese and place it in the basket",
@@ -176,7 +176,7 @@ window.SITE_CONTENT = {
         {
           title: "Empty prompt",
           caption: "Expected: Robot do nothing\nActual: robot executed the original task",
-          model: "pi05",
+          model: "Pi05",
           suite: "object",
           condition: "empty prompt",
           prompt_text: " ",
@@ -186,7 +186,7 @@ window.SITE_CONTENT = {
         {
           title: "Don't do anything",
           caption: "Expected: Robot do nothing\nActual: robot executed the original task",
-          model: "pi05",
+          model: "Pi05",
           suite: "object",
           condition: "negative prompt",
           prompt_text: "Don't do anything",
@@ -205,7 +205,7 @@ window.SITE_CONTENT = {
         {
           title: "Baseline scene",
           caption: "Original cream-cheese task in the standard LIBERO Object layout.",
-          model: "pi05",
+          model: "Pi05",
           suite: "object",
           condition: "baseline",
           prompt_text: "pick up the cream cheese and place it in the basket",
@@ -216,7 +216,7 @@ window.SITE_CONTENT = {
         {
           title: "Swap milk and cheese",
           caption: "The original prompt no longer guarantees the correct object once the layout prior is disturbed.",
-          model: "pi05",
+          model: "Pi05",
           suite: "object",
           condition: "scene perturbation",
           prompt_text: "pick up the cream cheese and place it in the basket",
@@ -226,7 +226,7 @@ window.SITE_CONTENT = {
         {
           title: "Seeded shuffle: failure case",
           caption: "Full object shuffle, cream-cheese task, failure example 1.",
-          model: "pi05",
+          model: "Pi05",
           suite: "object",
           condition: "shuffle failure",
           prompt_text: "pick up the cream cheese and place it in the basket",
@@ -237,7 +237,7 @@ window.SITE_CONTENT = {
         {
           title: "Seeded shuffle: failure case",
           caption: "Full object shuffle, cream-cheese task, failure example 2.",
-          model: "pi05",
+          model: "Pi05",
           suite: "object",
           condition: "shuffle failure",
           prompt_text: "pick up the cream cheese and place it in the basket",
