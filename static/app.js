@@ -148,14 +148,17 @@
     byId("shuffle-root").innerHTML = `
       <p class="section-text">${formatInlineText(content.sections.shuffle.intro)}</p>
       ${renderVideoModules(content.shortcut_modules)}
+      ${content.sections.shuffle.conclusion ? `<div class="section-conclusion">${formatInlineText(content.sections.shuffle.conclusion)}</div>` : ""}
     `;
   }
 
   function renderConclusion() {
     byId("conclusion-root").innerHTML = `
-      ${content.sections.conclusion.paragraphs
-        .map((paragraph) => `<p class="section-text">${formatInlineText(paragraph)}</p>`)
-        .join("")}
+      <div class="section-conclusion">
+        ${content.sections.conclusion.paragraphs
+          .map((paragraph) => `<p>${formatInlineText(paragraph)}</p>`)
+          .join("")}
+      </div>
     `;
   }
 

@@ -129,7 +129,15 @@ a {
   letter-spacing: -0.02em;
 }
 
-.section-text,
+.section-text {
+  max-width: none;
+  color: var(--ink);
+  font-size: clamp(1.08rem, 1.15vw, 1.22rem);
+  line-height: 1.82;
+  text-align: justify;
+  text-wrap: pretty;
+}
+
 .section-note,
 .artifact-intro {
   max-width: 72ch;
@@ -138,7 +146,7 @@ a {
 
 .section-text + .section-text,
 .section-note + .section-note {
-  margin-top: 12px;
+  margin-top: 16px;
 }
 
 .claim-grid,
@@ -387,6 +395,14 @@ thead th {
   line-height: 1.28;
 }
 
+.section-conclusion p {
+  margin: 0;
+}
+
+.section-conclusion p + p {
+  margin-top: 14px;
+}
+
 .method-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-top: 18px;
@@ -506,6 +522,10 @@ thead th {
 
   .module-actions {
     flex-wrap: wrap;
+  }
+
+  .section-text {
+    text-align: left;
   }
 }
 

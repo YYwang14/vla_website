@@ -14,15 +14,15 @@ window.SITE_CONTENT = {
     },
     results: {
       intro:
-        "We summarize only Spatial and Object, where each task is paired with a different scene and shortcutting is most visible. The table below distills the main finding across those suites.",
+        "We summarize on Spatial and Object task suites, where each task is paired with a different scene and shortcutting is most visible. The table below distills the main finding across those suites.",
       highlight:
         "LIBERO-finetuned VLAs often recover the task from the scene instead of from the prompt.",
     },
     openvla: {
       intro:
-        "This section shows representative Spatial and Object rollouts for the combined OpenVLA-OFT checkpoint under standard, empty, and negative prompts.",
+        "This section shows representative examples for the OpenVLA model under standard, empty, and negative prompts.",
       conclusion:
-        "This suggests that the VLA does not exhibit semantic instruction following; it mainly recovers the task from the scene.",
+        "This suggests that the VLA does not exhibit semantic instruction following; it just overfits to the scene",
     },
     pi05: {
       intro:
@@ -30,35 +30,37 @@ window.SITE_CONTENT = {
     },
     shuffle: {
       intro:
-        "When we perturb the object layout in the Object suite, performance becomes brittle and the positional shortcut becomes explicit. Once that regularity is broken, success drops sharply.",
+        "This is the mechanism-level probe. We further explored the model's reliance on the recognized scene with seeded random shuffles of object positions within the same task. Two shuffled examples then show how brittle the behavior becomes once layout regularities are broken. Across 100 shuffled tests, task success rate falls from **98.4% to 23%**.",
+      conclusion:
+        "We found that even when the target object is swapped to a different place, the VLA still reaches for the object in the original location. This failure mode suggests that the VLA memorizes the action or target location associated with the scene, rather than understanding the specific object semantics.",
     },
     conclusion: {
       paragraphs: [
         "LIBERO is valuable for robotics evaluation, but it has limitations when used to assess instruction following in VLAs.",
-        "In particular, the Spatial and Object suites can reward scene-based task recovery, which overstates instruction-following ability.",
+        "In particular, the benchmark can reward scene-based task recovery, which overstates instruction-following ability.",
       ],
     },
   },
   overall_results: [
     {
-      model: "OpenVLA-OFT",
+      model: "OpenVLA",
       condition: "Official baseline",
       scope: "Spatial + Object (200 episodes)",
       expected: "-",
       actual: "195/200 (97.5%)",
     },
     {
-      model: "OpenVLA-OFT",
+      model: "OpenVLA",
       condition: "Empty prompt",
       scope: "Spatial + Object (200 episodes)",
-      expected: "0",
+      expected: "0%",
       actual: "179/200 (89.5%)",
     },
     {
-      model: "OpenVLA-OFT",
+      model: "OpenVLA",
       condition: "Don't do anything",
       scope: "Spatial + Object (200 episodes)",
-      expected: "0",
+      expected: "0%",
       actual: "181/200 (90.5%)",
     },
     {
@@ -72,7 +74,7 @@ window.SITE_CONTENT = {
       model: "pi0.5",
       condition: "Empty prompt",
       scope: "Spatial + Object (200 episodes)",
-      expected: "0",
+      expected: "0%",
       actual: "121/200 (60.5%)",
     },
   ],
@@ -80,7 +82,7 @@ window.SITE_CONTENT = {
     {
       title: "Spatial task",
       caption:
-        "OpenVLA-OFT continues the same bowl-placement behavior even when the prompt is removed or replaced by a negative prompt.",
+        "OpenVLA continues the same bowl-placement behavior even when the prompt is removed or replaced by a negative prompt.",
       videos: [
         {
           title: "Standard prompt",
@@ -96,7 +98,7 @@ window.SITE_CONTENT = {
         },
         {
           title: "Empty prompt",
-          caption: "Expected: Robot do nothing\nAcutal: robot executed the original task",
+          caption: "Expected: Robot do nothing\nActual: robot executed the original task",
           model: "openvla",
           suite: "spatial",
           condition: "empty prompt",
@@ -106,7 +108,7 @@ window.SITE_CONTENT = {
         },
         {
           title: "Don't do anything",
-          caption: "Expected: Robot do nothing\nAcutal: robot executed the original task",
+          caption: "Expected: Robot do nothing\nActual: robot executed the original task",
           model: "openvla",
           suite: "spatial",
           condition: "negative prompt",
@@ -119,21 +121,21 @@ window.SITE_CONTENT = {
     {
       title: "Object task",
       caption:
-        "OpenVLA-OFT also keeps executing the original Object task after prompt removal or a negative prompt.",
+        "OpenVLA also keeps executing the original Object task after prompt removal or a negative prompt.",
       videos: [
         {
           title: "Standard prompt",
           caption: "Task: pick up the cream cheese and place it in the basket.",
           model: "openvla",
           suite: "object",
-          condition: "task",
+          condition: "standard prompt",
           prompt_text: "pick up the cream cheese and place it in the basket",
           result: "success",
           src: "openvla_object/task.mp4",
         },
         {
           title: "Empty prompt",
-          caption: "Expected: Robot do nothing\nAcutal: robot executed the original task",
+          caption: "Expected: Robot do nothing\nActual: robot executed the original task",
           model: "openvla",
           suite: "object",
           condition: "empty prompt",
@@ -143,7 +145,7 @@ window.SITE_CONTENT = {
         },
         {
           title: "Don't do anything",
-          caption: "Expected: Robot do nothing\nAcutal: robot executed the original task",
+          caption: "Expected: Robot do nothing\nActual: robot executed the original task",
           model: "openvla",
           suite: "object",
           condition: "negative prompt",
@@ -156,7 +158,7 @@ window.SITE_CONTENT = {
   ],
   pi05_modules: [
     {
-      title: "Object prompt probes",
+      title: "Object task",
       caption:
         "On the same cream-cheese scene, pi0.5 often keeps the original behavior despite empty prompts or prompt editing.",
       videos: [
@@ -172,7 +174,7 @@ window.SITE_CONTENT = {
         },
         {
           title: "Empty prompt",
-          caption: "Expected: Robot do nothing\nAcutal: robot executed the original task",
+          caption: "Expected: Robot do nothing\nActual: robot executed the original task",
           model: "pi05",
           suite: "object",
           condition: "empty prompt",
@@ -181,8 +183,8 @@ window.SITE_CONTENT = {
           src: "object_different_prompt/object_task01_episode00_pick_up_the_cream_cheese_and_place_it_in_the_basket_prompt_blank_success.mp4",
         },
         {
-          title: "Negative prompt",
-          caption: "Expected: Robot do nothing\nAcutal: robot executed the original task",
+          title: "Don't do anything",
+          caption: "Expected: Robot do nothing\nActual: robot executed the original task",
           model: "pi05",
           suite: "object",
           condition: "negative prompt",
@@ -197,7 +199,7 @@ window.SITE_CONTENT = {
     {
       title: "Cream-cheese task under scene perturbation",
       caption:
-        "This is the mechanism-level probe. The baseline succeeds, but after the cream-cheese / milk layout perturbation the same prompt no longer grounds reliably. Two seeded shuffle examples then show how brittle the behavior becomes once layout regularities are broken.",
+        "When we perturb the object layout in the Object suite, performance becomes poor and the positional shortcut becomes explicit. Once that regularity is broken, success drops sharply.",
       videos: [
         {
           title: "Baseline scene",
@@ -211,37 +213,35 @@ window.SITE_CONTENT = {
           notes: "The cream cheese begins in the task's designated target region.",
         },
         {
-          title: "Scene perturbation / swap probe",
-          caption: "Same prompt after the cream-cheese / milk layout probe.",
+          title: "Swap milk and cheese",
+          caption: "The original prompt no longer guarantees the correct object once the layout prior is disturbed.",
           model: "pi05",
           suite: "object",
           condition: "scene perturbation",
           prompt_text: "pick up the cream cheese and place it in the basket",
           result: "failure",
           src: "object_different_prompt/object_task01_episode00_pick_up_the_cream_cheese_and_place_it_in_the_basket_prompt_pick_up_the_cream_cheese_and_place_it_in_the_basket_failure.mp4",
-          notes: "The original prompt no longer guarantees the correct object once the layout prior is disturbed.",
         },
         {
           title: "Seeded shuffle: failure case",
-          caption: "Full object shuffle, cream-cheese task, failure example.",
+          caption: "Full object shuffle, cream-cheese task, failure example 1.",
           model: "pi05",
           suite: "object",
           condition: "shuffle failure",
           prompt_text: "pick up the cream cheese and place it in the basket",
           result: "failure",
-          src: "shuffle_test/shuffle_task01_trial00_episode26_pick_up_the_cream_cheese_and_place_it_in_the_basket_prompt_pick_up_the_cream_cheese_and_place_it_in_failure.mp4",
-          notes: "Across 100 shuffled Object episodes, success falls to 23/100.",
+          src: "shuffle_test/shuffle_task01_trial02_episode15_pick_up_the_cream_cheese_and_place_it_in_the_basket_prompt_pick_up_the_cream_cheese_and_place_it_in_failure.mp4",
+          
         },
         {
           title: "Seeded shuffle: success case",
-          caption: "Full object shuffle, cream-cheese task, success example.",
+          caption: "Full object shuffle, cream-cheese task, failure example 2.",
           model: "pi05",
           suite: "object",
-          condition: "shuffle success",
+          condition: "shuffle failure",
           prompt_text: "pick up the cream cheese and place it in the basket",
-          result: "success",
-          src: "shuffle_test/shuffle_task01_trial03_episode02_pick_up_the_cream_cheese_and_place_it_in_the_basket_prompt_pick_up_the_cream_cheese_and_place_it_in_success.mp4",
-          notes: "The remaining successes are brittle and heavily layout-dependent.",
+          result: "failure",
+          src: "shuffle_test/shuffle_task01_trial06_episode34_pick_up_the_cream_cheese_and_place_it_in_the_basket_prompt_pick_up_the_cream_cheese_and_place_it_in_failure.mp4",
         },
       ],
     },
