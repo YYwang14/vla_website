@@ -2,7 +2,6 @@ window.SITE_CONTENT = {
   hero: {
     titleLine1: "On the Instruction-Following Limitations of",
     titleLine2: "Vision-Language-Action Models on LIBERO",
-    lab: "Computer Security & Privacy Laboratory @ WashU",
     subtitle: "VLAs fine-tuned on the LIBERO benchmark exhibit severe overfitting.",
   },
   sections: {
