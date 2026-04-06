@@ -2,14 +2,14 @@ window.SITE_CONTENT = {
   hero: {
     titleLine1: "On the Instruction-Following Limitations of",
     titleLine2: "Vision-Language-Action Models on LIBERO",
-    lab: "Computer Security & Privacy Laboratory @WashU",
-    subtitle: "LIBERO-finetuned VLAs often recover the task from the scene instead of from the prompt.",
+    lab: "Computer Security & Privacy Laboratory @ WashU",
+    subtitle: "VLAs fine-tuned on the LIBERO benchmark exhibit severe overfitting.",
   },
   sections: {
     introduction: {
       paragraphs: [
-        "LIBERO is widely used to evaluate vision-language-action models. Here we test two state-of-the-art VLA models, **OpenVLA** and **Pi0.5**, to see whether LIBERO-finetuned VLAs actually follow the language instruction, or instead infer the task from the scene.",
-        "We find that, in the Spatial and Object suites, benchmark success often survives empty prompts and negative prompts. This suggests that the models are not using language as the primary task signal; instead, they often recover the task from the scene layout.",
+        "LIBERO is a widely used benchmark for evaluating vision-language-action (VLA) models. We study two state-of-the-art VLAs, **OpenVLA** and **Pi0.5**, to examine whether models fine-tuned on LIBERO truly follow language instructions or instead overfit to the scene.",
+        "We find that, in the Spatial and Object suites, benchmark success often persists even under **empty** or **negative prompts**. This suggests that the language instruction is not being faithfully followed, and that the VLA models are overfitted to infer the task from scene layout alone.",
       ],
     },
     results: {
