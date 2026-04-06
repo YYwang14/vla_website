@@ -9,7 +9,7 @@ window.SITE_CONTENT = {
     introduction: {
       paragraphs: [
         "LIBERO is a widely used benchmark for evaluating vision-language-action (VLA) models. We study two state-of-the-art VLAs, **OpenVLA** and **Pi0.5**, to examine whether models fine-tuned on LIBERO truly follow language instructions or instead overfit to the scene.",
-        "We find that, in the Spatial and Object suites, benchmark success often persists even under **empty** or **negative prompts**. This suggests that the language instruction is not being faithfully followed, and that the VLA models are overfitted to infer the task from scene layout alone.",
+        "We find that, in the Spatial and Object suites, benchmark success persists even under **empty** or **negative prompts**. This suggests that the language instruction is not being faithfully followed, and that the VLA models are overfitted to infer the task from scene layout alone.",
       ],
     },
     results: {
@@ -36,8 +36,9 @@ window.SITE_CONTENT = {
     },
     conclusion: {
       paragraphs: [
-        "LIBERO is valuable for robotics evaluation, but it has limitations when used to assess instruction following in VLAs.",
-        "In particular, the benchmark can reward scene-based task recovery, which overstates instruction-following ability.",
+        "LIBERO is a valuable benchmark for robotics evaluation, but it has important limitations for assessing instruction following in VLA models.",
+        "In particular, the benchmark tightly couples language instructions with task-specific scene configurations, which can encourage models to infer the task directly from the scene rather than rely on the instruction itself.",
+        "As a result, strong benchmark performance may overestimate a model’s true instruction-following capability.",
       ],
     },
   },
@@ -234,7 +235,7 @@ window.SITE_CONTENT = {
           
         },
         {
-          title: "Seeded shuffle: success case",
+          title: "Seeded shuffle: failure case",
           caption: "Full object shuffle, cream-cheese task, failure example 2.",
           model: "pi05",
           suite: "object",
